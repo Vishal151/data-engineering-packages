@@ -4,6 +4,7 @@ COPY api /api
 COPY TaxiFareModel /TaxiFareModel
 COPY model.joblib /model.joblib
 COPY requirements.txt /requirements.txt
+COPY /mnt/c/Users/visha/Documents/gcp_keys/wagon_data.json /credentials.json
 
 RUN pip install -r requirements.txt
 
