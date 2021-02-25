@@ -23,3 +23,5 @@ termcolor
 category_encoders
 python-geohash
 xgboost==1.3.3
+uvicorn
+fastapi
