@@ -108,7 +108,7 @@ if __name__ == "__main__":
     y = df["fare_amount"]
     X = df.drop("fare_amount", axis=1)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-    # Train and save model, locally and
+    # Train and save model, locally and on GCP
     trainer = Trainer(X=X_train, y=y_train)
     trainer.set_experiment_name('xp2')
     trainer.run()

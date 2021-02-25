@@ -14,7 +14,7 @@ def get_data_from_gcp(nrows=10000, local=False, optimize=False, **kwargs):
     if local:
         path = "data/data_data_10Mill.csv"
     else:
-        path = "gs://complete/correct_path/here"
+        path = "gs://{}/{}".format(BUCKET_NAME, BUCKET_TRAIN_DATA_PATH)
     df = pd.read_csv(path, nrows=nrows)
     return df
 

@@ -2,17 +2,20 @@ import os
 
 from google.cloud import storage
 from termcolor import colored
+
 from TaxiFareModel.params import BUCKET_NAME, MODEL_NAME, MODEL_VERSION
 
 
-def storage_upload(rm=False):
-    client = storage.Client().bucket(BUCKET_NAME)
+def storage_upload(model_version=MODEL_VERSION, bucket=BUCKET_NAME, rm=False):
+    client = storage.Client().bucket(bucket)
 
-    local_model_name = 'model.joblib'
-    storage_location = f"models/{MODEL_NAME}/{MODEL_VERSION}/{local_model_name}"
+    storage_location = 'models/{}/versions/{}/{}'.format(
+        MODEL_NAME,
+        model_version,
+        'model.joblib')
     blob = client.blob(storage_location)
     blob.upload_from_filename('model.joblib')
-    print(colored(f"=> model.joblib uploaded to bucket {BUCKET_NAME} inside {storage_location}",
+    print(colored("=> model.joblib uploaded to bucket {} inside {}".format(BUCKET_NAME, storage_location),
                   "green"))
     if rm:
         os.remove('model.joblib')

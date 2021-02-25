@@ -7,7 +7,7 @@ requirements = [x.strip() for x in content if 'git+' not in x]
 
 setup(name='TaxiFareModel',
       version="1.0",
-      description="Project Description",
+      description="Taxi Fare Prediction Pipeline",
       packages=find_packages(),
       # include_package_data: to install data from MANIFEST.in
       include_package_data=True,
