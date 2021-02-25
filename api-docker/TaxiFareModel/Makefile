@@ -1,5 +1,5 @@
 # path of the file to upload to gcp (the path of the file should be absolute or should match the directory where the make command is run)
-LOCAL_PATH="/home/vishal151/code/Vishal151/TaxiFareModel/raw_data/train_1k.csv"
+LOCAL_PATH="/home/vishal151/code/Vishal151/TaxiFareModel/raw_data/train_10k.csv"
 
 # project id
 PROJECT_ID=wagon-data-bootcamp-305709
@@ -58,7 +58,7 @@ BUCKET_TRAINING_FOLDER = 'trainings'
 
 PYTHON_VERSION=3.7
 FRAMEWORK=scikit-learn
-RUNTIME_VERSION=2.2
+RUNTIME_VERSION=2.1
 
 ##### Package params  - - - - - - - - - - - - - - - - - - -
 
